@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">IntegraEdu</string>
+    <string name="nome">Nome: </string>
+    <string name="loginUsuario">Login de Usuário</string>
+    <string name="senha">Senha: </string>
+    <string name="esqueciSenha">Esqueci minha senha </string>
+    <string name="email">Email: </string>
+    <string name="entrar">Entrar </string>
+
+
+
+
 </resources>
