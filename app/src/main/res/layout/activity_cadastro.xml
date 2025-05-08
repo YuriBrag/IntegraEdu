@@ -81,7 +81,9 @@
                 android:id="@+id/buttonCadastrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cadastrar" />
+                android:text="@string/cadastrar"
+                android:backgroundTint="#FF0031"
+                android:textColor="#FFF"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

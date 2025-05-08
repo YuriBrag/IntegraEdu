@@ -78,15 +78,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/entrar"
-                android:backgroundTint="#ADD8E6"
-                android:textColor="#000000"/>
+                android:backgroundTint="#0DA6A6"
+                android:textColor="#FFF"/>
             <Button
                 android:id="@+id/buttonSignin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/criarConta"
                 android:backgroundTint="#A9A9A9"
-                android:textColor="#000000"/>
+                android:textColor="#FFF"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
