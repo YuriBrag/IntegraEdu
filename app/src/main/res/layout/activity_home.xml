@@ -49,13 +49,14 @@
 
         <Button
             android:id="@+id/btnAlunos"
-            android:text="@string/alunos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
             android:backgroundTint="#808080"
+            android:text="@string/alunos"
+            android:textSize="14sp"
             app:cornerRadius="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/btnCadastrarAtv"/>
+            app:layout_constraintBottom_toBottomOf="@+id/btnCadastrarAtv" />
+
         <Button
             android:id="@+id/btnDashboards"
             android:text="@string/dashboards"
@@ -88,16 +89,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.5">
 
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opção 1"
-            android:padding="16dp" />
+            android:text="@string/editarPerfil"
+            android:padding="16dp"
+            android:backgroundTint="#808080"
+            app:cornerRadius="0dp"/>
 
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opção 2"
-            android:padding="16dp" />
+            android:text="@string/sair"
+            android:padding="16dp"
+            android:backgroundTint="#808080"
+            app:cornerRadius="0dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

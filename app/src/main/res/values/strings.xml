@@ -24,4 +24,6 @@
     <string name="visEventos">Visualizar Eventos</string>
     <string name="eventos">Eventos</string>
     <string name="alunos">Alunos</string>
+    <string name="editarPerfil">Editar Perfil</string>
+    <string name="sair">Sair</string>
 </resources>
