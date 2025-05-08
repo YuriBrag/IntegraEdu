@@ -24,8 +24,17 @@ public class MainActivity extends AppCompatActivity {
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, CadastroActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button botaoLogin = findViewById(R.id.buttonLogin);
+
+        botaoLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

@@ -3,17 +3,25 @@
     <string name="nome">Nome: </string>
     <string name="loginUsuario">Login de Usuário</string>
     <string name="senha">Senha: </string>
-    <string name="esqueciSenha">Esqueci minha senha </string>
+    <string name="esqueciSenha">Esqueci minha senha</string>
     <string name="email">Email: </string>
     <string name="entrar">Entrar </string>
     <string name="criarConta">Criar Conta </string>
-    <string name="dataNasc">Data de Nascimento:  </string>
+    <string name="dataNasc">Data de Nascimento:</string>
     <string name="cadastrar">Cadastrar</string>
-    <string name="cpf">CPF: </string>
-    <string name="tel">Telefone: </string>
-    <string name="nomeComp">Nome Completo </string>
+    <string name="cpf">CPF:</string>
+    <string name="tel">Telefone:</string>
+    <string name="nomeComp">Nome Completo</string>
     <string name="cadastroDeUsuario">Cadastro de Usuário</string>
-
-
-
+    <string name="servicos">Serviços</string>
+    <string name="cadastrarAtv">Cadastrar Atividade</string>
+    <string name="atendimentos">Atendimentos</string>
+    <string name="participacao">Participação em eventos</string>
+    <string name="suporte">Suporte Academico</string>
+    <string name="visAluno">Visualizar Alunos</string>
+    <string name="alertaAluno">Alerta de Alunos</string>
+    <string name="dashboards">Dashboards</string>
+    <string name="visEventos">Visualizar Eventos</string>
+    <string name="eventos">Eventos</string>
+    <string name="alunos">Alunos</string>
 </resources>
