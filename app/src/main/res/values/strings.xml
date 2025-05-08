@@ -6,7 +6,13 @@
     <string name="esqueciSenha">Esqueci minha senha </string>
     <string name="email">Email: </string>
     <string name="entrar">Entrar </string>
-
+    <string name="criarConta">Criar Conta </string>
+    <string name="dataNasc">Data de Nascimento:  </string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cpf">CPF: </string>
+    <string name="tel">Telefone: </string>
+    <string name="nomeComp">Nome Completo </string>
+    <string name="cadastroDeUsuario">Cadastro de Usuário</string>
 
 
 
