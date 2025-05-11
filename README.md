@@ -2,7 +2,7 @@
 ## Integrantes:
 - Lucas Alves Rezende Machado da Silva - 108189
 - Arthur Andrade Vieira - 108219
-- Yuri Cardoso Bragine - 
+- Yuri Cardoso Bragine - 108199
 - Antonio Gabriel Souza Gomes - 108188
 
 ## Requisitos
