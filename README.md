@@ -1,4 +1,5 @@
 # Trabalho Final de INF 311
+#App de Performance de Relacionamento entre Instituição e Aluno
 ## Integrantes:
 - Lucas Alves Rezende Machado da Silva - 108189
 - Arthur Andrade Vieira - 108219
