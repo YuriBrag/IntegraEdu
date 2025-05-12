@@ -1,9 +1,12 @@
 package yuri.bragine.integraedu;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.view.View;
@@ -29,6 +32,13 @@ public class HomeActivity extends AppCompatActivity {
                 menuLateral.setVisibility(View.GONE);
             }
         });
-
+        Button btnAlunos = findViewById(R.id.btnAlunos);
+        btnAlunos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AlunosActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
