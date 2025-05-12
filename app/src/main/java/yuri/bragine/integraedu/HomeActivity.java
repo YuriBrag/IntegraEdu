@@ -40,5 +40,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button btnDashboards = findViewById(R.id.btnDashboards);
+        btnDashboards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, DashboardsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

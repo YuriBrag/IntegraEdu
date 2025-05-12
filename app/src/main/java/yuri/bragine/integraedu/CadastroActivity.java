@@ -8,6 +8,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class CadastroActivity extends AppCompatActivity {
 
     @Override
@@ -15,6 +18,5 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cadastro);
-
     }
 }
