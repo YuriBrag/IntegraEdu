@@ -16,7 +16,7 @@ import java.util.List;
 public class DashboardsActivity extends AppCompatActivity {
 
     List<Aluno> alunosList = Arrays.asList(
-            new Aluno("Juca", "Bus", 9.5, 87, "Alta", 2, "Ativo"),
+            new Aluno("João", "Márcio", 9.5, 87, "Alta", 2, "Ativo"),
             new Aluno("Maria", "Silva", 8.7, 92, "Média", 0, "Ativo"),
             new Aluno("Pedro", "Oliveira", 6.3, 75, "Baixa", 3, "Trancado")
     );

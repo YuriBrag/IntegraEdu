@@ -22,6 +22,9 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
 
+        Intent intent = getIntent();
+        String resposta = intent.getStringExtra("resposta");
+
         ImageButton btnMenu = findViewById(R.id.btnMenu);
         LinearLayout menuLateral = findViewById(R.id.menuLateral);
 
@@ -54,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, EventosActivity.class);
+                intent.putExtra("resposta", resposta);
                 startActivity(intent);
             }
         });

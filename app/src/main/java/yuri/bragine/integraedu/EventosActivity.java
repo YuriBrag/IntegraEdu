@@ -1,11 +1,13 @@
 package yuri.bragine.integraedu;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,10 +23,12 @@ public class EventosActivity extends AppCompatActivity {
     );
 
     List<String> nomesParticipantes = Arrays.asList(
-            "Juca Bus",
+            "João Márcio",
             "Maria Silva",
             "Pedro Oliveira"
     );
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,12 @@ public class EventosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eventos);
 
         LinearLayout alunosContainer = findViewById(R.id.alunosContainer);
+
+        Intent intent = getIntent();
+
+        String resposta = intent.getStringExtra("resposta");
+
+        Log.i("Resposta", resposta);
 
         for (Aluno aluno : alunosList) {
             // Botão principal com nome do evento

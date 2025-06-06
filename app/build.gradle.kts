@@ -32,7 +32,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,4 +39,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // ✅ Retrofit (HTTP client)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // ✅ Gson (JSON parser)
+    implementation("com.google.code.gson:gson:2.8.8")
+
+    // ✅ Retrofit + Gson converter
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
