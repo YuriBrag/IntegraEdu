@@ -26,4 +26,5 @@
     <string name="alunos">Alunos</string>
     <string name="editarPerfil">Editar Perfil</string>
     <string name="sair">Sair</string>
+    <string name="btnApi">Teste API</string>
 </resources>
