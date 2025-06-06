@@ -4,87 +4,69 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.content.Intent;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class EventosActivity extends AppCompatActivity {
-
-    List<Aluno> alunosList = Arrays.asList(
-            new Aluno("Seminário", "Literatura", 9.5, 87, "Alta", 2, "Ativo"),
-            new Aluno("Semana", "de Informática", 8.7, 92, "Média", 0, "Ativo"),
-            new Aluno("Feira", "de Livro", 6.3, 75, "Baixa", 3, "Trancado")
-    );
-
-    List<String> nomesParticipantes = Arrays.asList(
-            "João Márcio",
-            "Maria Silva",
-            "Pedro Oliveira"
-    );
+import yuri.bragine.integraedu.data.repository.ApiResponseCallback;
+import yuri.bragine.integraedu.data.repository.RequestRepository;
 
 
+public class EventosActivity extends AppCompatActivity implements ApiResponseCallback {
+
+    private RequestRepository repository;
+    private TextView textViewResultado;
+    private Button botaoChamarApi;
+
+    private static final int ORIGEM_API = 9;
+    private static final String TOKEN_API = "0088c5a7834ebc95321fef219dbd722b";
+    private static final int ID_CONTATO_EXEMPLO = 21;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_eventos);
 
-        LinearLayout alunosContainer = findViewById(R.id.alunosContainer);
 
-        Intent intent = getIntent();
+        repository = new RequestRepository();
 
-        String resposta = intent.getStringExtra("resposta");
+        textViewResultado = findViewById(R.id.txtDaApi);
+        botaoChamarApi = findViewById(R.id.btnApi);
 
-        Log.i("Resposta", resposta);
 
-        for (Aluno aluno : alunosList) {
-            // Botão principal com nome do evento
-            Button btn = new Button(this);
-            btn.setText(aluno.getNome() + " " + aluno.getSobrenome());
-
-            // Container para detalhes (checkboxes)
-            LinearLayout detalhesLayout = new LinearLayout(this);
-            detalhesLayout.setOrientation(LinearLayout.VERTICAL);
-            detalhesLayout.setVisibility(View.GONE);
-
-            for (String nome : nomesParticipantes) {
-                CheckBox checkBox = new CheckBox(this);
-                checkBox.setText(nome);
-                detalhesLayout.addView(checkBox);
-            }
-
-            final boolean[] expanded = {false};
-
-            btn.setOnClickListener(v -> {
-                if (!expanded[0]) {
-                    detalhesLayout.setVisibility(View.VISIBLE);
-                    expanded[0] = true;
-                } else {
-                    detalhesLayout.setVisibility(View.GONE);
-                    expanded[0] = false;
-                }
-            });
-
-            alunosContainer.addView(btn);
-            alunosContainer.addView(detalhesLayout);
-        }
-
-        // Menu lateral
-        LinearLayout menuLateral = findViewById(R.id.menuLateral);
-        ImageButton btnMenu = findViewById(R.id.btnMenu);
-
-        btnMenu.setOnClickListener(v -> {
-            if (menuLateral.getVisibility() == View.GONE) {
-                menuLateral.setVisibility(View.VISIBLE);
-            } else {
-                menuLateral.setVisibility(View.GONE);
+        botaoChamarApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // if (textViewResultado != null) {
+                //     textViewResultado.setText("Carregando...");
+                // }
+                Toast.makeText(EventosActivity.this, "Chamando API...", Toast.LENGTH_SHORT).show();
+                chamarApi();
             }
         });
+    }
+
+    private void chamarApi() {
+        repository.getAPI(ID_CONTATO_EXEMPLO, ORIGEM_API, TOKEN_API, this);
+    }
+
+    @Override
+    public void onSuccess(String jsonResponse) {
+        Log.i("ACTIVITY_API", "Sucesso recebido: " + jsonResponse);
+         if (textViewResultado != null) {
+             textViewResultado.setText("Resposta da API:\n" + jsonResponse);
+         }
+        Toast.makeText(this, "Sucesso! Resposta recebida.", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        Log.e("ACTIVITY_API", "Erro recebido: " + errorMessage);
+         if (textViewResultado != null) {
+             textViewResultado.setText("Erro na API:\n" + errorMessage);
+         }
+        Toast.makeText(this, "Erro: " + errorMessage, Toast.LENGTH_LONG).show();
     }
 }
