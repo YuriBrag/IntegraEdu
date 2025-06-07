@@ -21,7 +21,7 @@ public class EventosActivity extends AppCompatActivity implements ApiResponseCal
 
     private static final int ORIGEM_API = 9;
     private static final String TOKEN_API = "0088c5a7834ebc95321fef219dbd722b";
-    private static final int ID_CONTATO_EXEMPLO = 21;
+    private static final int ID_CONTATO = 21;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class EventosActivity extends AppCompatActivity implements ApiResponseCal
     }
 
     private void chamarApi() {
-        repository.getAPI(ID_CONTATO_EXEMPLO, ORIGEM_API, TOKEN_API, this);
+        repository.getAPI(ID_CONTATO, ORIGEM_API, TOKEN_API, this);
     }
 
     @Override
