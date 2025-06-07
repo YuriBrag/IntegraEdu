@@ -73,7 +73,7 @@
                 android:id="@+id/editTextDataNascimento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/dataNasc"
+                android:hint="@string/senha"
                 android:inputType="date"
                 android:layout_marginBottom="24dp" />
 
