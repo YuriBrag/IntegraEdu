@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         if (db.coordenadorDao().getAllCoordenadores().isEmpty()) {
             db.coordenadorDao().insert(new Coordenador("Admin Teste", "admin@email.com", "admin123", "111.222.333-44", "99999-9999"));
             //db.coordenadorDao().insert(new Coordenador("Admin", "adm", "adm123", "111.222.333-44", "99999-9999"));
-            Toast.makeText(this, "Coordenador de teste criado: admin@email.com / admin123", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Coordenador de teste criado: admin@email.com / admin123", Toast.LENGTH_LONG).show();
         }
 
         editTextEmail = findViewById(R.id.editTextEmail);
