@@ -6,9 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.gson.Gson;
 
+import yuri.bragine.integraedu.data.models.Entity.Resposta;
+import yuri.bragine.integraedu.data.models.Entity.RespostaWrapper;
+import yuri.bragine.integraedu.data.models.Entity.Dado;
 import androidx.appcompat.app.AppCompatActivity;
-
+import java.util.List;
 import yuri.bragine.integraedu.data.repository.ApiResponseCallback;
 import yuri.bragine.integraedu.data.repository.RequestRepository;
 
@@ -22,7 +26,7 @@ public class EventosActivity extends AppCompatActivity implements ApiResponseCal
     private static final int ORIGEM_API = 9;
     private static final String TOKEN_API = "0088c5a7834ebc95321fef219dbd722b";
     private static final int ID_CONTATO = 21;
-
+    public int ID_BUSCA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,12 @@ public class EventosActivity extends AppCompatActivity implements ApiResponseCal
         });
     }
 
+
+
+    private void chamaAPIContato(String id){
+        repository.getAPIContato(Integer.parseInt(id), ORIGEM_API, TOKEN_API, this);
+    }
+
     private void chamarApi() {
         repository.getAPI(ID_CONTATO, ORIGEM_API, TOKEN_API, this);
     }
@@ -55,11 +65,39 @@ public class EventosActivity extends AppCompatActivity implements ApiResponseCal
     @Override
     public void onSuccess(String jsonResponse) {
         Log.i("ACTIVITY_API", "Sucesso recebido: " + jsonResponse);
-         if (textViewResultado != null) {
-             textViewResultado.setText("Resposta da API:\n" + jsonResponse);
-         }
-        Toast.makeText(this, "Sucesso! Resposta recebida.", Toast.LENGTH_SHORT).show();
+
+        Gson gson = new Gson();
+        RespostaWrapper respostaWrapper = gson.fromJson(jsonResponse, RespostaWrapper.class);
+        respostaWrapper.Resposta=gson.fromJson(jsonResponse, Resposta.class);
+
+        if (respostaWrapper != null && respostaWrapper.Resposta != null) {
+            List<Dado> lista = respostaWrapper.Resposta.dados;
+            for (Dado dado : lista) {
+                Log.i("DADO", "Pessoa: " + dado.pessoa + ", tipoNome: " + dado.tipoNome);
+            }
+        }
+
+
+        if (respostaWrapper != null && respostaWrapper.Resposta != null &&
+                respostaWrapper.Resposta.dados != null) {
+
+            String tipoNome = respostaWrapper.Resposta.dados.get(0).tipoNome;
+            String pessoa= respostaWrapper.Resposta.dados.get(0).pessoa;
+            //chamaAPIContato(pessoa);
+
+
+
+            if (textViewResultado != null) {
+                textViewResultado.setText("Pessoa "+  pessoa  +"tipoNome do primeiro dado: " + tipoNome);
+            }
+
+
+        } else {
+            textViewResultado.setText("Nenhum dado encontrado na resposta.");
+        }
     }
+
+
 
     @Override
     public void onError(String errorMessage) {

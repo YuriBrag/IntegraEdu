@@ -55,4 +55,38 @@ public class RequestRepository {
             }
         });
     }
+    public void getAPIContato(Integer id, Integer origem, String token, final ApiResponseCallback callback) {
+
+        BodyContatos body = new BodyContatos(id, origem, token);
+        Call<JsonObject> call = rubeus.buscarContatosPorFiltros2(body);
+
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    String resposta = response.body().toString();
+                    Log.i("API_RESPONSE", "Resposta: " + resposta);
+                    callback.onSuccess(resposta);
+                } else {
+
+                    String erroMsg = "Erro na resposta da API. Código: " + response.code();
+                    if (response.errorBody() != null) {
+                        try {
+                            erroMsg += " Detalhes: " + response.errorBody().string();
+                        } catch (Exception e) {
+                            Log.e("API_RESPONSE", "Erro ao ler corpo do erro", e);
+                        }
+                    }
+                    Log.e("API_RESPONSE", erroMsg);
+                    callback.onError(erroMsg);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.e("API_RESPONSE", "Falha na requisição: " + t.toString(), t);
+                callback.onError(t.getMessage());
+            }
+        });
+    }
 }
