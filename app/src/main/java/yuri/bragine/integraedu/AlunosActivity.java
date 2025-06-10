@@ -17,9 +17,14 @@ import java.util.List;
 public class AlunosActivity extends AppCompatActivity {
 
     List<Aluno> alunosList = Arrays.asList(
-            new Aluno("João", "Márcio", 9.5, 87, "Alta", 2, "Ativo"),
-            new Aluno("Maria", "Silva", 8.7, 92, "Média", 0, "Ativo"),
-            new Aluno("Pedro", "Oliveira", 6.3, 75, "Baixa", 3, "Trancado")
+            new Aluno("Fernanda", "Lima", 7.8, 89, "Média", 1, "Ativo"),
+            new Aluno("Ana Beatriz", "Rocha", 9.1, 94, "Alta", 0, "Ativo"),
+            new Aluno("Pedro Henrique", "Alves", 5.4, 68, "Baixa", 5, "Trancado"),
+            new Aluno("Rafael", "Cardoso", 6.9, 81, "Média", 2, "Ativo"),
+            new Aluno("Juliana", "Martins", 8.3, 90, "Alta", 1, "Ativo"),
+            new Aluno("Gustavo", "Pereira", 4.8, 60, "Crítica", 6, "Evadido"),
+            new Aluno("Lucas", "Oliveira", 7.1, 85, "Média", 3, "Ativo"),
+            new Aluno("Mariana", "Souza", 8.9, 95, "Alta", 0, "Ativo")
     );
 
     @Override

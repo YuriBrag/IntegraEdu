@@ -16,4 +16,5 @@ public class Evento {
     public String getId() { return id; }
     public String getTipoNome() { return tipoNome; }
     public String getPessoa() { return pessoa; }
+
 }

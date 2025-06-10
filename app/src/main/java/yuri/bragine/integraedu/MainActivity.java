@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextSenha;
     private Button buttonLogin;
-
     private Button buttonCadastro;
     private AppDatabase db;
 

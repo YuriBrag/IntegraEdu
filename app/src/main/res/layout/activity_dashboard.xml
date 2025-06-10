@@ -6,148 +6,173 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".DashboardsActivity">
 
+    <!-- Botão de menu -->
     <ImageButton
         android:id="@+id/btnMenu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
         android:contentDescription="Abrir menu"
-        android:background="@null"
+        android:background="@android:color/transparent"
         android:src="@drawable/ic_menu"
-        app:tint="@android:color/black"
+        app:tint="#0DA6A6"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Conteúdo -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
-
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu">
 
         <ImageView
             android:id="@+id/imagemLogo"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/logointegraedu"
             android:contentDescription="Logo do aplicativo"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/txtDivider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dashboards"
-            android:textColor="#FFF"
-            android:textAlignment="center"
-            android:padding="3dp"
+            android:textColor="#FFFFFF"
             android:background="#0DA6A6"
+            android:padding="12dp"
             android:textSize="20sp"
+            android:textAlignment="center"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp" />
 
+        <!-- Container de alunos -->
         <LinearLayout
             android:id="@+id/alunosContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:divider="?android:attr/dividerHorizontal"
-            android:showDividers="middle"/>
-        <!--        <Button-->
-        <!--            android:id="@+id/btnApi"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="@string/btnApi"-->
-        <!--            android:padding="16dp"-->
-        <!--            android:backgroundTint="#808080"-->
-        <!--            app:cornerRadius="0dp"/>-->
-        <!--        <TextView-->
-        <!--            android:id="@+id/txtDaApi"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"/>-->
+            android:showDividers="middle" />
+
+        <!-- Botões e dados da API -->
         <Button
             android:id="@+id/btnReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/alReg"
-            android:padding="16dp"
-            android:backgroundTint="#808080"
-            app:cornerRadius="0dp"/>
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#0DA6A6"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            app:cornerRadius="12dp" />
+
         <TextView
             android:id="@+id/txtDaApiRegulares"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+
         <Button
             android:id="@+id/btnAlerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/alAlerta"
-            android:padding="16dp"
-            android:backgroundTint="#808080"
-            app:cornerRadius="0dp"/>
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#0DA6A6"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            app:cornerRadius="12dp" />
+
         <TextView
             android:id="@+id/txtDaApiAlerta"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btnEva"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/alEvadidos"
-            android:padding="16dp"
-            android:backgroundTint="#808080"
-            app:cornerRadius="0dp"/>
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#0DA6A6"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            app:cornerRadius="12dp" />
+
         <TextView
             android:id="@+id/txtDaApiEvadidos"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/btnEgressos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/alEgressos"
-            android:padding="16dp"
-            android:backgroundTint="#808080"
-            app:cornerRadius="0dp"/>
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#0DA6A6"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            app:cornerRadius="12dp" />
+
         <TextView
             android:id="@+id/txtDaApiEgressos"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <!-- Menu lateral -->
     <LinearLayout
         android:id="@+id/menuLateral"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#DDDDDD"
+        android:background="#F8F8F8"
         android:visibility="gone"
-        android:elevation="8dp"
+        android:elevation="10dp"
+        android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.5">
+        app:layout_constraintWidth_percent="0.6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#0DA6A6"
+            android:layout_marginBottom="24dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/editarPerfil"
-            android:padding="16dp"
-            android:backgroundTint="#808080"
-            app:cornerRadius="0dp"/>
-
+            android:padding="12dp"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#0DA6A6"
+            app:cornerRadius="8dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sair"
-            android:padding="16dp"
-            android:backgroundTint="#808080"
-            app:cornerRadius="0dp"/>
+            android:padding="12dp"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#E60026"
+            android:layout_marginTop="12dp"
+            app:cornerRadius="8dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

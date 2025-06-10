@@ -12,6 +12,7 @@ import yuri.bragine.integraedu.data.models.CorpoAPI.BodyEventos;
 import yuri.bragine.integraedu.data.models.respostaAPI.RespostaEventos;
 import yuri.bragine.integraedu.data.models.respostaAPI.RespostaPessoa;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 public class RequestRepository {
@@ -93,6 +94,10 @@ public class RequestRepository {
             @Override
             public void onResponse(Call<RespostaPessoa> call, Response<RespostaPessoa> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess() && response.body().getDados() != null) {
+                    Gson gson = new Gson();
+                    String jsonResposta = gson.toJson(response.body());
+                    Log.e("API_RESPONSE", "JSON: " + jsonResposta);
+
                     callback.onSuccess(response.body().getDados());
                 } else {
                     callback.onError("Erro ao buscar pessoa com ID " + pessoaId + ". Código: " + response.code());

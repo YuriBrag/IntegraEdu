@@ -93,6 +93,10 @@ public class DashboardsActivity extends AppCompatActivity {
                 Log.i(TAG, "Eventos recebidos: " + eventos.size());
                 //targetTextView.setText("Eventos recebidos. Filtrando...\n");
 
+                for (Evento evento : eventos) {
+                    Log.d(TAG, "TipoNome do evento: " + evento.getTipoNome());
+                }
+
                 List<Evento> eventosFiltrados = eventos.stream()
                         .filter(evento -> evento.getTipoNome() != null && evento.getTipoNome().endsWith(filtroTipoNome))
                         .collect(Collectors.toList());
