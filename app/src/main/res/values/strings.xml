@@ -27,9 +27,9 @@
     <string name="editarPerfil">Editar Perfil</string>
     <string name="sair">Sair</string>
     <string name="btnApi">Teste API</string>
-    <string name="alReg">Alunos Regulares</string>
-    <string name="alAlerta">Alunos em Alerta</string>
-    <string name="alEvadidos">Alunos Evadidos</string>
-    <string name="alEgressos">Alunos Egressos</string>
+    <string name="alReg">Regulares</string>
+    <string name="alAlerta">Alerta</string>
+    <string name="alEvadidos">Evadidos</string>
+    <string name="alEgressos">Egressos</string>
 
 </resources>

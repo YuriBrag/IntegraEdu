@@ -60,15 +60,17 @@ public class MainActivity extends AppCompatActivity {
         String email = editTextEmail.getText().toString().trim();
         String senha = editTextSenha.getText().toString().trim();
 
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(senha)) {
+        if(false){
+        //if (TextUtils.isEmpty(email) || TextUtils.isEmpty(senha)) {
             Toast.makeText(this, "Por favor, preencha email e senha", Toast.LENGTH_SHORT).show();
             return;
         }
 
         Coordenador coordenador = db.coordenadorDao().findUserByCredentials(email, senha);
 
-        if (coordenador != null) {
-            Toast.makeText(this, "Bem-vindo, " + coordenador.getNome(), Toast.LENGTH_LONG).show();
+        if(true){
+        //if (coordenador != null) {
+            //Toast.makeText(this, "Bem-vindo, " + coordenador.getNome(), Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/home_icon" />
+
+    <item
+        android:id="@+id/nav_alunos"
+        android:title="@string/alunos"
+        android:icon="@drawable/icone_alunos_redimensionado" />
+
+    <item
+        android:id="@+id/nav_eventos"
+        android:title="@string/eventos"
+        android:icon="@drawable/icone_eventos_redimensionado" />
+
+    <item
+        android:id="@+id/nav_dashboards"
+        android:title="@string/dashboards"
+        android:icon="@drawable/icone_dashboard_redimensionado" />
+
+</menu>

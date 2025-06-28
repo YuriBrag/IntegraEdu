@@ -3,141 +3,138 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     tools:context=".HomeActivity">
 
-    <!-- Botão de menu -->
     <ImageButton
         android:id="@+id/btnMenu"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:contentDescription="Abrir menu"
         android:background="@android:color/transparent"
+        android:contentDescription="Abrir menu"
         android:src="@drawable/ic_menu"
-        app:tint="#0DA6A6"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:tint="#000000" />
 
-    <!-- Logo -->
     <ImageView
         android:id="@+id/imagemLogo"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="160dp"
-        android:src="@drawable/logointegraedu"
+        android:layout_marginTop="24dp"
         android:contentDescription="Logo do aplicativo"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenu"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/imagem_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMenu" />
 
-    <!-- Divider -->
     <TextView
         android:id="@+id/txtDivider"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/servicos"
+        android:layout_marginTop="16dp"
+        android:background="#6e6e6e"
+        android:padding="12dp"
+        android:text="Home"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:background="#FF4E4E"
-        android:padding="12dp"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/imagemLogo"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemLogo" />
 
-    <!-- Botões de navegação -->
     <LinearLayout
-        android:id="@+id/layoutButtons"
+        android:id="@+id/layoutTopButtons"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintTop_toBottomOf="@id/txtDivider"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/txtDivider">
 
         <Button
             android:id="@+id/btnAlunos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:backgroundTint="#0DA6A6"
+            android:drawableTop="@drawable/icone_alunos_redimensionado"
+            android:drawablePadding="8dp"
+            android:paddingTop="24dp"
             android:text="@string/alunos"
+            android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#0DA6A6"
-            android:textSize="16sp"
-            app:cornerRadius="12dp" />
-
-        <Button
-            android:id="@+id/btnDashboards"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/dashboards"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#0DA6A6"
             android:textSize="16sp"
             app:cornerRadius="12dp" />
 
         <Button
             android:id="@+id/btnEventos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/eventos"
-            android:textColor="#FFFFFF"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
             android:backgroundTint="#0DA6A6"
+            android:drawableTop="@drawable/icone_eventos_redimensionado"
+            android:drawablePadding="8dp"
+            android:paddingTop="24dp"
+            android:text="@string/eventos"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:cornerRadius="12dp" />
     </LinearLayout>
 
-    <!-- Menu lateral (invisível por padrão) -->
+    <Button
+        android:id="@+id/btnDashboards"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#0DA6A6"
+        android:drawableTop="@drawable/icone_dashboard_redimensionado"
+        android:drawablePadding="8dp"
+        android:paddingTop="24dp"
+        android:text="@string/dashboards"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTopButtons" />
+
     <LinearLayout
         android:id="@+id/menuLateral"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="#F8F8F8"
-        android:visibility="gone"
         android:elevation="10dp"
+        android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.6">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.6" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Menu"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#0DA6A6"
-            android:layout_marginBottom="24dp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/editarPerfil"
-            android:padding="12dp"
-            android:backgroundTint="#E0E0E0"
-            android:textColor="#0DA6A6"
-            app:cornerRadius="8dp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sair"
-            android:padding="12dp"
-            android:backgroundTint="#E0E0E0"
-            android:textColor="#E60026"
-            app:cornerRadius="8dp"
-            android:layout_marginTop="12dp" />
-    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
