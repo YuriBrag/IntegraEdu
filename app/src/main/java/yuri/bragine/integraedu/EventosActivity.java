@@ -165,11 +165,16 @@ public class EventosActivity extends AppCompatActivity {
         // Limpa eventos antigos antes de adicionar novos (caso a view seja reutilizada)
         eventosLayout.removeAllViews();
         for (Evento evento : eventosDaPessoa) {
-            TextView eventoView = new TextView(this);
-            eventoView.setText("• " + evento.getTipoNome());
-            eventoView.setPadding(32, 8, 8, 8);
-            eventosLayout.addView(eventoView);
+            String tipoNome = evento.getTipoNome();
+
+            if (!"foi importado".equalsIgnoreCase(tipoNome)) {
+                TextView eventoView = new TextView(this);
+                eventoView.setText("• " + tipoNome);
+                eventoView.setPadding(32, 8, 8, 8);
+                eventosLayout.addView(eventoView);
+            }
         }
+
 
         containerAlunos.addView(itemView);
     }
